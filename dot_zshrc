@@ -1,0 +1,9 @@
+fpath=($HOME/.nix-profile/share/zsh/site-functions $fpath)
+
+autoload -Uz compinit && compinit
+
+# Nix
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+# End Nix
