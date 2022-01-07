@@ -1,0 +1,38 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Lionello Lunesu
+	email = lio+git@lunesu.com
+        #signingKey = 5CC645FF3C07E581
+[filter "media"]
+        required = true
+        clean = git media clean %f
+        smudge = git media smudge %f
+#[credential]
+#        helper = osxkeychain
+[difftool "idiff"]
+        cmd = diff -i $LOCAL $REMOTE
+[difftool]
+        prompt = 0
+[commit]
+        #gpgSign = 1
+[pull]
+        ff = only
+        rebase = true
+[merge]
+        ff = false
+[submodule]
+        recurse = true
+[push]
+        default = simple
+        followTags = true
+        recurseSubmodules = on-demand
+[color]
+        ui = true
+[core]
+        excludesfile = /Users/llunesu/.config/git/gitignore
+        editor = vim
+[diff "gpg"]
+        binary = true
+        textconv = gpg -d --quiet --yes --compress-algo=none --no-encrypt-to
+
