@@ -1,0 +1,29 @@
+{
+  /* Home */
+  "\UF729"   = "moveToBeginningOfLine:";
+  "^\UF729"  = "moveToBeginningOfDocument:";
+  "$\UF729"  = "moveToBeginningOfLineAndModifySelection:";
+  "^$\UF729" = "moveToBeginningOfDocumentAndModifySelection:";
+
+  /* End */
+  "\UF72B"   = "moveToEndOfLine:";
+  "^\UF72B"  = "moveToEndOfDocument:";
+  "$\UF72B"  = "moveToEndOfLineAndModifySelection:";
+  "^$\UF72B" = "moveToEndOfDocumentAndModifySelection:";
+
+  /* PgUp */
+  "\UF72C"   = "pageUp:";
+  "$\UF72C"  = "pageUpAndModifySelection:";
+
+  /* PgDown */
+  "\UF72D"   = "pageDown:";
+  "$\UF72D"  = "pageDownAndModifySelection:";
+
+  /* Left */
+  "^\UF702"  = "moveWordLeft:";
+  "^$\UF702" = "moveWordLeftAndModifySelection:";
+
+  /* Right */
+  "^\UF703"  = "moveWordRight:";
+  "^$\UF703" = "moveWordRightAndModifySelection:";
+}
