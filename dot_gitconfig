@@ -1,6 +1,5 @@
 # This is Git's per-user configuration file.
 [user]
-# Please adapt and uncomment the following lines:
 	name = Lionello Lunesu
 	email = lio+git@lunesu.com
         #signingKey = 5CC645FF3C07E581
@@ -36,3 +35,5 @@
         binary = true
         textconv = gpg -d --quiet --yes --compress-algo=none --no-encrypt-to
 
+[rebase]
+	autoStash = true
