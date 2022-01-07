@@ -1,0 +1,63 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
+"Plugin 'VundleVim/Vundle.vim'
+"Plugin 'Valloric/YouCompleteMe'
+" All of your Plugins must be added before the following line
+"call vundle#end()            " required
+filetype plugin indent on    " required
+
+set encoding=utf-8
+set fileencoding=utf-8
+"set viminfo='100,\"100,<1000,s100,h
+set incsearch
+"set wildignorecase
+set autowrite
+set autochdir
+set tabstop=8
+set shiftwidth=2
+set expandtab
+set autoindent
+set smartindent
+set laststatus=2
+set mouse=a
+set ignorecase
+set tags=tags;
+noremap <Del> "_x
+set undofile
+set undodir=/Users/llunesu/.vim/undo
+
+set history=100         " keep 100 lines of history
+set ruler               " show the cursor position
+syntax on               " syntax highlighting
+set hlsearch            " highlight the last searched term
+filetype plugin on      " use the file type plugins
+match Error /\s\+$/
+
+" Only do this part when compiled with support for autocommands
+if has("autocmd")
+  augroup fedora
+  autocmd!
+  " In text files, always limit the width of text to 78 characters
+  " autocmd BufRead *.txt set tw=78
+  " When editing a file, always jump to the last cursor position
+  autocmd BufReadPost *
+  \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+  \   exe "normal! g'\"" |
+  \ endif
+  " don't write swapfile on most commonly used directories for NFS mounts or USB sticks
+  autocmd BufNewFile,BufReadPre /media/*,/mnt/* set directory=~/tmp,/var/tmp,/tmp
+  " start with spec file template
+  autocmd BufNewFile *.spec 0r /usr/share/vim/vimfiles/template.spec
+  augroup END
+endif
+
+set modelines=0
+set nomodeline
+
+" From https://github.com/gopasspw/gopass/blob/master/docs/setup.md#securing-your-editor
+au BufNewFile,BufRead /private/**/gopass** setlocal noswapfile nobackup noundofile
+
